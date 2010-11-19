@@ -18,6 +18,7 @@ namespace Nini.Config
 
         #region constructors
         public EnvConfigSource() {
+			
         }
         public EnvConfigSource(string[] envars) {
 
@@ -37,7 +38,9 @@ namespace Nini.Config
 
 
         }
-
+		/// <summary>
+		/// The case sensitive flag
+		/// </summary>
         public bool CaseSensitive
         {
             get { return caseSensitive; }
