@@ -1,0 +1,60 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Config/EnvConfigSource.cs">
+    <Files>
+      <File FileName="Config/ConfigSourceBase.cs" Line="18" Column="2" />
+      <File FileName="Config/EnvConfigSource.cs" Line="12" Column="52" />
+      <File FileName="Config/IConfigSource.cs" Line="20" Column="11" />
+      <File FileName="Config/IConfig.cs" Line="16" Column="21" />
+      <File FileName="Config/ConfigBase.cs" Line="346" Column="44" />
+      <File FileName="Config/ConfigCollection.cs" Line="43" Column="13" />
+      <File FileName="Config/EnvConfig.cs" Line="33" Column="35" />
+      <File FileName="Config/IniConfig.cs" Line="58" Column="1" />
+      <File FileName="Ini/IniDocument.cs" Line="119" Column="22" />
+      <File FileName="Config/IniConfigSource.cs" Line="19" Column="1" />
+      <File FileName="Ini/IniItem.cs" Line="10" Column="3" />
+      <File FileName="Env/EnvMap.cs" Line="19" Column="6" />
+      <File FileName="Env/EnvItem.cs" Line="32" Column="10" />
+      <File FileName="Util/OrderedList.cs" Line="41" Column="32" />
+      <File FileName="Config/DotNetConfigSource.cs" Line="1" Column="1" />
+      <File FileName="Util/ArgvParser.cs" Line="57" Column="36" />
+      <File FileName="Ini/IniSectionCollection.cs" Line="21" Column="15" />
+      <File FileName="Env/EnvReader.cs" Line="1" Column="1" />
+      <File FileName="Ini/IniReader.cs" Line="49" Column="24" />
+      <File FileName="Test/Config/ConfigSourceBaseTests.cs" Line="354" Column="11" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Nini" expanded="True">
+            <Node name="Config" expanded="True">
+              <Node name="EnvConfigSource.cs" selected="True" />
+            </Node>
+            <Node name="Env" expanded="True" />
+            <Node name="Ini" expanded="True" />
+            <Node name="Util" expanded="True" />
+          </Node>
+          <Node name="NiniTest" expanded="True">
+            <Node name="Config" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="ConnectionManagerPad">
+        <State selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
