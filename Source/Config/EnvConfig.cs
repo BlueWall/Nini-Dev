@@ -23,7 +23,7 @@ namespace Nini.Config
 
             return base.Get (key);
         }
-        /// <include file='IniConfig.xml' path='//Method[@name="Set"]/docs/*' />
+
         public override void Set (string key, object value)
         {
             if (!parent.CaseSensitive) {
