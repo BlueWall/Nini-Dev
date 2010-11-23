@@ -15,6 +15,9 @@ namespace Nini.Config
         }
         #endregion
         #region public methods
+        // The base class contains other methods like Get(string, string), so a
+        // default value can be passed to the class, if we have one
+        //
         public override string Get (string key)
         {
             if (!parent.CaseSensitive) {

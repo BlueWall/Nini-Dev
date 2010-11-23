@@ -12,6 +12,8 @@ namespace Nini.Config
     // This needs to use the events to make changes to the shell environment
     // if a key-pair changes in the EnvConfig occurs
     //
+    // This class knows how to load and save the environment variables
+    //
     public class EnvConfigSource : ConfigSourceBase
     {
         #region private variables

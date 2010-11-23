@@ -13,6 +13,8 @@ namespace Nini.Env
     // authoratitive environment map for the application
     //
     // We will look to synchronize all lists in the shell env, EnvItems and here
+    // *** It looks like the events should be handled at the application level
+    // *** So, we won't try doing it here for the time-being
     //
     //
     public sealed class EnvMap

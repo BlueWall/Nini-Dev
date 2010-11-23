@@ -7,7 +7,7 @@ namespace Nini.Env
         // Set environment variables in the shell
         public EnvWriter()
         {
-            
+
         }
     }
 }
