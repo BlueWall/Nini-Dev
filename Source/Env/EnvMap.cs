@@ -96,13 +96,20 @@ namespace Nini.Env
                 return instance;
             }
         }
-
-        public void Add(string envar)
+        /// <summary>
+        /// Add a key:val to the map with the defaultValue being assigned if
+        /// the environment variable is empty
+        /// </summary>
+        /// <param name="envar">
+        /// A <see cref="System.String"/>
+        /// </param>
+        public void Add(string key, string defaultValue)
         {
-
+            EnvReader reader = new EnvReader();
+            envList.Add(key, reader.Get(key, defaultValue));
         }
 
-        public void Add(string[] envars)
+        public void Save()
         {
 
         }

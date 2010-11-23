@@ -14,7 +14,7 @@ namespace Nini.Config
     //
     // This class knows how to load and save the environment variables. It is our
     // "document". This is the system facing side of our implementation that will
-    
+
     //
     public class EnvConfigSource : ConfigSourceBase
     {
@@ -33,24 +33,21 @@ namespace Nini.Config
         {
 			
         }
-        public EnvConfigSource(string[] envars)
-        {
-
-        }
         #endregion
 
         #region public properties
         #endregion
 
         #region public methods
+        public void AddEnv(string key, string defaultValue)
+        {
+            envmap.Add(key, defaultValue);
+        }
         // Can use this to set environment variables in the shell
-        // See how this works!
-        // If it just save to the source, it is good
-        // If it wants to save everything, not so good
-        // In that case, a special method will be made for that
+        //
         public override void Save() {
-
-
+            envmap.Save();
+            base.Save();
         }
 		/// <summary>
 		/// The case sensitive flag

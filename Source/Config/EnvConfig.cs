@@ -19,22 +19,21 @@ namespace Nini.Config
         }
         #endregion
         #region public methods
-        // The base class contains other methods like Get(string, string), so a
-        // default value can be passed to the class, if we have one
-        //
-        // Can make sure the values here are synchronized with the EnvMap (which acts as
-        // our document) by doing our processing. Then, we call the bas method which stores
-        // the key:value pair in the OrderedList - keys
-        //
-        public override string Get (string key)
+        /// <summary>
+        /// Add a key:value pair to the system facing implementation
+        /// </summary>
+        /// <param name="key">
+        /// A <see cref="System.String"/>
+        /// </param>
+        /// <param name="value">
+        /// A <see cref="System.String"/>
+        /// </param>
+        public void AddMapElement(string key, string defaultValue)
         {
-            if (!parent.CaseSensitive) {
-                key = CaseInsensitiveKeyName (key);
-            }
+            // This goes to the system side of the app
+            parent.AddEnv(key, defaultValue);
 
-            return base.Get (key);
         }
-
         public override void Set (string key, object value)
         {
             if (!parent.CaseSensitive) {
