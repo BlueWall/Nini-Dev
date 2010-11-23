@@ -60,26 +60,6 @@ namespace Nini.Config
 
         #endregion
         #region private methods
-        // This started as a clone of the ArgvConfig family.
-        // But not sure if it fits for this.
-        // The Environment is dynamic and needs to be synchronized
-        // between all the elements, each item, the config source
-        // and the actual shell environment values.
-        //
-        // TODO: This needs sorting out - is it a section or an item?
-        //
-        IConfig GetConfig(string name) {
-            IConfig result = null;
-
-            if (this.Configs[name] == null) {
-                result = new ConfigBase (name, this);
-                this.Configs.Add (result);
-            } else {
-                result = this.Configs[name];
-            }
-
-            return result;
-        }
         //
         // Make a loader to get each value we are interested in
         // and look in the shell for the value, then create a
