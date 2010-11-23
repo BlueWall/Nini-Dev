@@ -9,6 +9,9 @@ using Nini.Env;
 
 namespace Nini.Config
 {
+    // This needs to use the events to make changes to the shell environment
+    // if a key-pair changes in the EnvConfig occurs
+    //
     public class EnvConfigSource : ConfigSourceBase
     {
         #region private variables
@@ -17,6 +20,11 @@ namespace Nini.Config
         #endregion
 
         #region constructors
+        // We will need to create an EnvMap and populate it with the
+        // keys to the environmant variable we are interested in using
+        //
+        // Then it will load them, or set a default
+        //
         public EnvConfigSource() {
 			
         }
