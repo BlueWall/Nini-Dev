@@ -12,7 +12,9 @@ namespace Nini.Config
     // This needs to use the events to make changes to the shell environment
     // if a key-pair changes in the EnvConfig occurs
     //
-    // This class knows how to load and save the environment variables
+    // This class knows how to load and save the environment variables. It is our
+    // "document". This is the system facing side of our implementation that will
+    
     //
     public class EnvConfigSource : ConfigSourceBase
     {
@@ -27,10 +29,12 @@ namespace Nini.Config
         //
         // Then it will load them, or set a default
         //
-        public EnvConfigSource() {
+        public EnvConfigSource()
+        {
 			
         }
-        public EnvConfigSource(string[] envars) {
+        public EnvConfigSource(string[] envars)
+        {
 
         }
         #endregion
@@ -64,6 +68,8 @@ namespace Nini.Config
         // The Environment is dynamic and needs to be synchronized
         // between all the elements, each item, the config source
         // and the actual shell environment values.
+        //
+        // TODO: This needs sorting out - is it a section or an item?
         //
         IConfig GetConfig(string name) {
             IConfig result = null;

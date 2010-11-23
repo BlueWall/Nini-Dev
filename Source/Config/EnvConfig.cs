@@ -2,6 +2,10 @@ using System;
 
 namespace Nini.Config
 {
+    // This is our application facing implementation to hold the list
+    // of key:value pairs in ConfigBase.keys. Our Application will use this to
+    // access/manipulate the pairs
+    //
     public class EnvConfig : ConfigBase
     {
         #region Private variables
@@ -17,6 +21,10 @@ namespace Nini.Config
         #region public methods
         // The base class contains other methods like Get(string, string), so a
         // default value can be passed to the class, if we have one
+        //
+        // Can make sure the values here are synchronized with the EnvMap (which acts as
+        // our document) by doing our processing. Then, we call the bas method which stores
+        // the key:value pair in the OrderedList - keys
         //
         public override string Get (string key)
         {
