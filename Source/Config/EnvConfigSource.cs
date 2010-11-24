@@ -47,6 +47,12 @@ namespace Nini.Config
             envmap.Save();
             base.Save();
         }
+        public void LoadEnv ()
+        {
+            this.Configs.Clear ();
+            Load ();
+        }
+
 		/// <summary>
 		/// The case sensitive flag
 		/// </summary>
@@ -62,6 +68,7 @@ namespace Nini.Config
         /// </summary>
         private void Load ()
         {
+            // TODO: After initial testing, look at adding "Sections" for management
             EnvConfig config = new EnvConfig("Environment", this);
             this.Configs.Add (config);
             EnvItem item = null;
@@ -69,10 +76,13 @@ namespace Nini.Config
             for (int j = 0; j < envmap.EnvList.Count; j++)
             {
                 item = envmap.GetItem(j);
-                if ( null != item.Value)
-                {
-                    config.Set(item.Name, item.Value);
-                }
+                if  (item.Name != null) {
+                        config.Add (item.Name, item.Value);
+                 }
+//                if ( null != item.Value)
+//                {
+//                    config.Set(item.Name, item.Value);
+//                }
             }
         }
         #endregion

@@ -24,10 +24,10 @@ namespace Nini.Env
         }
         #endregion
 
-        internal protected EnvItem (string name, string value, string comment)
+        internal protected EnvItem (string name, string val, string comment)
         {
             envName = name;
-            envValue = value;
+            envValue = val;
             envComment = comment;
         }
     }

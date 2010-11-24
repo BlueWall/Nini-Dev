@@ -121,7 +121,7 @@ namespace Nini.Env
         /// </returns>
         public EnvItem GetItem (int index)
         {
-            return (EnvItem)EnvList[index];
+            return (EnvItem) EnvList[index];
         }
         /// <summary>
         /// Add a key:val to the map with the defaultValue being assigned if
@@ -132,7 +132,8 @@ namespace Nini.Env
         /// </param>
         public void Add(string key, string defaultValue)
         {
-            envList.Add(key, env.Get(key, defaultValue));
+            EnvItem item = new EnvItem(key, env.Get(key, defaultValue), "" );
+            envList.Add(key, item);
         }
 
         public void Save()
