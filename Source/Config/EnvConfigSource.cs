@@ -34,10 +34,8 @@ namespace Nini.Config
 			
         }
         #endregion
-
         #region public properties
         #endregion
-
         #region public methods
         public void AddEnv(string key, string defaultValue)
         {
@@ -57,17 +55,26 @@ namespace Nini.Config
             get { return caseSensitive; }
             set { caseSensitive = value; }
         }
-
         #endregion
         #region private methods
-        //
-        // Make a loader to get each value we are interested in
-        // and look in the shell for the value, then create a
-        // config item in our config source to match it's value.
-        // If no shell item is found, then we create our item with
-        // a default value (if supplied) and synchronize our list
-        // of config items with the shell environment.
-        //
+        /// <summary>
+        /// Load the EnvMap key:val pairs into out application facing side
+        /// </summary>
+        private void Load ()
+        {
+            EnvConfig config = new EnvConfig("Environment", this);
+            this.Configs.Add (config);
+            EnvItem item = null;
+
+            for (int j = 0; j < envmap.EnvList.Count; j++)
+            {
+                item = envmap.GetItem(j);
+                if ( null != item.Value)
+                {
+                    config.Set(item.Name, item.Value);
+                }
+            }
+        }
         #endregion
     }
 }

@@ -19,21 +19,6 @@ namespace Nini.Config
         }
         #endregion
         #region public methods
-        /// <summary>
-        /// Add a key:value pair to the system facing implementation
-        /// </summary>
-        /// <param name="key">
-        /// A <see cref="System.String"/>
-        /// </param>
-        /// <param name="value">
-        /// A <see cref="System.String"/>
-        /// </param>
-        public void AddMapElement(string key, string defaultValue)
-        {
-            // This goes to the system side of the app
-            parent.AddEnv(key, defaultValue);
-
-        }
         public override void Set (string key, object value)
         {
             if (!parent.CaseSensitive) {
@@ -50,8 +35,8 @@ namespace Nini.Config
         private string CaseInsensitiveKeyName (string key)
         {
             string result = null;
-
             string lowerKey = key.ToLower ();
+
             foreach (string currentKey in keys.Keys)
             {
                 if (currentKey.ToLower () == lowerKey) {
@@ -59,7 +44,6 @@ namespace Nini.Config
                     break;
                 }
             }
-
             return (result == null) ? key : result;
         }
         #endregion

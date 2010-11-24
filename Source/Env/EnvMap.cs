@@ -25,6 +25,7 @@ namespace Nini.Env
         private static object syncRoot = new Object();
         private OrderedList envList;
         private bool synchronized = false;
+        private EnvAdapter env = null;
         #endregion
 
         #region constructors
@@ -33,6 +34,7 @@ namespace Nini.Env
         /// </summary>
         private EnvMap()
         {
+            env = new EnvAdapter();
         }
         #endregion
         #region public properties
@@ -74,6 +76,17 @@ namespace Nini.Env
                 }
             }
         }
+        /// <summary>
+        /// Get our list of shell environment variables;
+        /// </summary>
+        public OrderedList EnvList
+        {
+            get {
+                lock (syncRoot) {
+                    return envList;
+                }
+            }
+        }
         #endregion
         #region public methods
         /// <summary>
@@ -81,6 +94,7 @@ namespace Nini.Env
         /// </summary>
         public static EnvMap Instance {
             get {
+
                 if (instance == null)
                 {
                     lock (syncRoot)
@@ -97,6 +111,19 @@ namespace Nini.Env
             }
         }
         /// <summary>
+        /// Return a shell environment variable
+        /// </summary>
+        /// <param name="index">
+        /// A <see cref="System.Int32"/>
+        /// </param>
+        /// <returns>
+        /// A <see cref="EnvItem"/>
+        /// </returns>
+        public EnvItem GetItem (int index)
+        {
+            return (EnvItem)EnvList[index];
+        }
+        /// <summary>
         /// Add a key:val to the map with the defaultValue being assigned if
         /// the environment variable is empty
         /// </summary>
@@ -105,8 +132,7 @@ namespace Nini.Env
         /// </param>
         public void Add(string key, string defaultValue)
         {
-            EnvReader reader = new EnvReader();
-            envList.Add(key, reader.Get(key, defaultValue));
+            envList.Add(key, env.Get(key, defaultValue));
         }
 
         public void Save()

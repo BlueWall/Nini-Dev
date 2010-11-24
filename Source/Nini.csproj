@@ -52,11 +52,10 @@
     <Compile Include="Util\OrderedList.cs" />
     <Compile Include="Util\OrderedListEnumerator.cs" />
     <Compile Include="Config\EnvConfigSource.cs" />
-    <Compile Include="Env\EnvReader.cs" />
-    <Compile Include="Env\EnvWriter.cs" />
     <Compile Include="Env\EnvMap.cs" />
     <Compile Include="Config\EnvConfig.cs" />
     <Compile Include="Env\EnvItem.cs" />
+    <Compile Include="Env\EnvAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
