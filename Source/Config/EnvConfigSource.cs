@@ -64,7 +64,7 @@ namespace Nini.Config
         #endregion
         #region private methods
         /// <summary>
-        /// Load the EnvMap key:val pairs into out application facing side
+        /// Load the EnvMap key:val pairs into our application facing side
         /// </summary>
         private void Load ()
         {

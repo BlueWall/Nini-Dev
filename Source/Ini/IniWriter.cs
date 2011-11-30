@@ -207,8 +207,11 @@ namespace Nini.Ini
 		{
 			if (!disposed) 
 			{
-				textWriter.Close ();
-				baseStream.Close ();
+				if ( textWriter != null )
+                    textWriter.Close ();
+                
+                if ( baseStream != null )
+				    baseStream.Close ();
 				disposed = true;
 
 				if (disposing) 
